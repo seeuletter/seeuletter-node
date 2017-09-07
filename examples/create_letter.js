@@ -9,7 +9,7 @@ var fs = require('fs')
 
 var lifebotFactory = require('../lib/index.js')
 var moment = require('moment')
-var Lifebot = new lifebotFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320c')
+var Lifebot = new lifebotFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320r')
 
 
 // Create the address

@@ -16,7 +16,8 @@
   "dependencies": {
     "bluebird": "^3.0.6",
     "flat": "^4.0.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "csv-parse": "^0.1.1",
