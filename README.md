@@ -1,9 +1,15 @@
 # lifebot-node
 
+[downloads-image]: http://img.shields.io/npm/dm/lifebot.svg
+[npm-url]: https://npmjs.org/package/lifebot
+[npm-image]: https://badge.fury.io/js/lifebot.svg
 
-Lifebot.fr Node.js Client is a simple but flexible wrapper for the [Lifebot.fr](https://www.lifebot.fr) API. 
+[![NPM version][npm-image]][npm-url] [![Dependency Status](https://gemnasium.com/badges/github.com/Lifebot-api/lifebot-node.svg)](https://gemnasium.com/github.com/Lifebot-api/lifebot-node)
 
-See full Lifebot.fr documentation [here](https://docs.lifebot.fr/). 
+
+Lifebot.fr Node.js Client is a simple but flexible wrapper for the [Lifebot.fr](https://www.lifebot.fr) API.
+
+See full Lifebot.fr documentation [here](https://docs.lifebot.fr/).
 
 For best results, be sure that you're using the latest version of the Lifebot API and the latest version of the Node.js wrapper.
 
