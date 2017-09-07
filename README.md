@@ -51,7 +51,7 @@ Once you have created an account, you can access your API Keys from the [Setting
 lifebot-node can be installed through the npm:
 
 ```
-$ npm install lifebot
+$ npm install -S lifebot
 ```
 
 To build and install from the latest source:
