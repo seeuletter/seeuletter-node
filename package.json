@@ -1,0 +1,39 @@
+{
+  "name": "lifebot",
+  "description": "Lifebot API wrapper",
+  "keywords": [
+    "Lifebot",
+    "Lifebot-node",
+    "rest",
+    "api",
+    "wrapper",
+    "Lifebot.fr",
+    "printing"
+  ],
+  "version": "4.0.0",
+  "homepage": "https://github.com/lifebot-api/lifebot-node",
+  "author": "Lifebot <support@lifebot.fr> (https://www.lifebot.fr/)",
+  "dependencies": {
+    "bluebird": "^3.0.6",
+    "flat": "^4.0.0",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "csv-parse": "^0.1.1",
+    "json-2-csv": "^1.3.0",
+    "moment": "^2.10.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lifebot-api/lifebot-node.git"
+  },
+  "bugs:": "https://github.com/lifebot-api/lifebot-node/issues",
+  "main": "./lib/index",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "files": [
+    "lib",
+    "LICENSE.txt"
+  ]
+}

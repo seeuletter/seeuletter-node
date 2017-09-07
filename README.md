@@ -1,4 +1,13 @@
 # lifebot-node
+
+
+Lifebot.fr Node.js Client is a simple but flexible wrapper for the [Lifebot.fr](https://www.lifebot.fr) API. 
+
+See full Lifebot.fr documentation [here](https://docs.lifebot.fr/). 
+
+For best results, be sure that you're using the latest version of the Lifebot API and the latest version of the Node.js wrapper.
+
+#### French
 Un module NPM pour envoyer du courrier postal en ligne depuis votre application Node.Js.
 
 Lifebot propose une API permettant d'envoyer très facilement du courrier postal depuis votre ERP, CRM ou application web.
@@ -9,5 +18,115 @@ Documentation : https://docs.lifebot.fr/
 
 Bien démarrer : https://www.lifebot.fr/guide/bien-demarrer-avec-l-api-d-envoi-de-courrier
 
+## Table of Contents
 
-**WIP** : Module NodeJs en cours de création.
+- [Getting Started](#getting-started)
+  - [Registration](#registration)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Examples](#examples)
+
+## Getting Started
+
+Here's a general overview of the Lifebot services available, click through to read more.
+
+
+Please read through the official [API Documentation](https://docs.lifebot.fr/) to get a complete sense of what to expect from each endpoint.
+
+### Registration
+
+First, you will need to first create an account at [Lifebot.fr](https://www.lifebot.fr/signup) and obtain your Test and Live API Keys.
+
+Once you have created an account, you can access your API Keys from the [Settings Panel](https://www.lifebot.fr/app/dashboard/keys).
+
+
+### Installation
+
+lifebot-node can be installed through the npm:
+
+```
+$ npm install lifebot
+```
+
+To build and install from the latest source:
+
+```
+$ git clone git@github.com:Lifebot-api/lifebot-node.git
+$ npm install
+```
+
+### Usage
+
+#### Callback
+```javascript
+var Lifebot = require('lifebot')('YOUR API KEY');
+
+
+// callback pattern
+Lifebot.letters.create({
+  description: 'Test Letter from the Node.js Wrapper',
+  to: {
+    name: 'Erlich',
+    address_line1: '30 rue de rivoli',
+    address_line2: '',
+    address_city: 'Paris',
+    address_country: 'France',
+    address_postalcode: '75004'
+  },
+  postage_type: 'prioritaire',
+  color: 'bw',
+  source_file: '<html>Hello, {{nom}}</html>',
+  source_file_type: 'html',
+  variables: {
+    nom : 'Lifebot'
+  }
+}, function (err, body) {
+   if (err) return callback(err);
+   return callback(null, body.data);
+})
+```
+
+#### Promise
+
+```javascript
+
+var Lifebot = require('lifebot')('YOUR API KEY');
+
+
+// callback pattern
+Lifebot.letters.create({
+  description: 'Test Letter from the Node.js Wrapper',
+  to: {
+    name: 'Erlich',
+    address_line1: '30 rue de rivoli',
+    address_line2: '',
+    address_city: 'Paris',
+    address_country: 'France',
+    address_postalcode: '75004'
+  },
+  postage_type: 'prioritaire',
+  color: 'bw',
+  source_file: '<html>Hello, {{nom}}</html>',
+  source_file_type: 'html',
+  variables: {
+    nom : 'Lifebot'
+  }
+})
+.then(function (response) {
+  console.log(response.data);
+})
+.catch(function (err) {
+  console.log(err);
+});
+```
+
+## Examples
+
+We've provided various examples for you to try out [here](https://github.com/lifebot-api/lifebot-node/tree/master/examples).
+
+
+=======================
+
+Copyright &copy; 2017 Lifebot.fr
+
+Released under the MIT License, which can be found in the repository in `LICENSE.txt`.
