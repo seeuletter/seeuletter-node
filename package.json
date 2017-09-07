@@ -10,7 +10,7 @@
     "Lifebot.fr",
     "printing"
   ],
-  "version": "4.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/lifebot-api/lifebot-node",
   "author": "Lifebot <support@lifebot.fr> (https://www.lifebot.fr/)",
   "dependencies": {
