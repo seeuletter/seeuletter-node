@@ -81,8 +81,8 @@ Lifebot.letters.create({
     nom : 'Lifebot'
   }
 }, function (err, body) {
-   if (err) return callback(err);
-   return callback(null, body.data);
+   if (err) console.log('err : ' , err.message);
+   console.log('body : ', body)
 })
 ```
 
@@ -113,10 +113,10 @@ Lifebot.letters.create({
   }
 })
 .then(function (response) {
-  console.log(response.data);
+  console.log('response : ', response);
 })
 .catch(function (err) {
-  console.log(err);
+  console.log('err : ', err);
 });
 ```
 
