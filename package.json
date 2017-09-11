@@ -1,18 +1,18 @@
 {
-  "name": "lifebot",
-  "description": "Lifebot API wrapper",
+  "name": "seeuletter",
+  "description": "Seeuletter API wrapper",
   "keywords": [
-    "Lifebot",
-    "Lifebot-node",
+    "Seeuletter",
+    "Seeuletter-node",
     "rest",
     "api",
     "wrapper",
-    "Lifebot.fr",
+    "Seeuletter.com",
     "printing"
   ],
   "version": "1.0.1",
-  "homepage": "https://github.com/lifebot-api/lifebot-node",
-  "author": "Lifebot <support@lifebot.fr> (https://www.lifebot.fr/)",
+  "homepage": "https://github.com/seeuletter/seeuletter-node",
+  "author": "Seeuletter <support@seeuletter.com> (https://www.seeuletter.com/)",
   "dependencies": {
     "bluebird": "^3.0.6",
     "flat": "^4.0.0",
@@ -26,9 +26,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifebot-api/lifebot-node.git"
+    "url": "https://github.com/seeuletter/seeuletter-node.git"
   },
-  "bugs:": "https://github.com/lifebot-api/lifebot-node/issues",
+  "bugs:": "https://github.com/seeuletter/seeuletter-node/issues",
   "main": "./lib/index",
   "engines": {
     "node": ">= 0.8.0"

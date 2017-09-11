@@ -7,13 +7,13 @@
 
 var fs = require('fs')
 
-var lifebotFactory = require('../lib/index.js')
+var seeuletterFactory = require('../lib/index.js')
 var moment = require('moment')
-var Lifebot = new lifebotFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320r')
+var Seeuletter = new seeuletterFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320r')
 
 
 // Create the address
-Lifebot.letters.create({
+Seeuletter.letters.create({
   description: 'Test Letter from the Node.js Wrapper',
   to: {
     name: 'Erlich',
@@ -28,7 +28,7 @@ Lifebot.letters.create({
 
   //source_file: fs.createReadStream('./too_large.pdf'),
 
-  // https://www.lifebot.fr/templates
+  // https://www.seeuletter.com/templates
   source_file: 'Sy7T70hHW',
   source_file_type: 'template_id',
 
@@ -38,7 +38,7 @@ Lifebot.letters.create({
     prenom: 'Erlich',
     promo_code: 'WELCOME20',
     expediteur: {
-      nom: 'Lifebot',
+      nom: 'Seeuletter',
       capital_social: '1 000 €',
       numero: '28',
       rue: 'rue de rivoli',
@@ -50,7 +50,7 @@ Lifebot.letters.create({
   }
 })
   .then(function (letter) {
-    console.log('The Lifebot API responded : ', letter)
+    console.log('The Seeuletter API responded : ', letter)
   })
   .catch(function (err) {
     //console.log('err : ', err);

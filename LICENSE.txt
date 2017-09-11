@@ -1,4 +1,4 @@
-Copyright (c) 2017 Lifebot.fr
+Copyright (c) 2017 Seeuletter.com
 
 MIT License
 
