@@ -99,7 +99,7 @@ Seeuletter.letters.create({
 var Seeuletter = require('seeuletter')('YOUR API KEY');
 
 
-// callback pattern
+// promise pattern
 Seeuletter.letters.create({
   description: 'Test Letter from the Node.js Wrapper',
   to: {
