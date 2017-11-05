@@ -1,10 +1,11 @@
 # seeuletter-node
 
-[downloads-image]: http://img.shields.io/npm/dm/lifebot.svg
-[npm-url]: https://npmjs.org/package/lifebot
-[npm-image]: https://badge.fury.io/js/lifebot.svg
+[downloads-image]: http://img.shields.io/npm/dm/seeuletter.svg
+[npm-url]: https://npmjs.org/package/seeuletter
+[npm-image]: https://badge.fury.io/js/seeuletter.svg
 
-[![NPM version][npm-image]][npm-url] [![Dependency Status](https://gemnasium.com/badges/github.com/Lifebot-api/lifebot-node.svg)](https://gemnasium.com/github.com/Lifebot-api/lifebot-node)
+[![NPM version][npm-image]][npm-url] [![Dependency Status](https://gemnasium.com/badges/github.com/seeuletter/seeuletter-node.svg)](https://gemnasium.com/github.com/seeuletter/seeuletter-node)
+
 
 
 Seeuletter.com Node.js Client is a simple but flexible wrapper for the [Seeuletter.com](https://www.seeuletter.com) API.
@@ -67,7 +68,6 @@ $ npm install
 ```javascript
 var Seeuletter = require('seeuletter')('YOUR API KEY');
 
-
 // callback pattern
 Seeuletter.letters.create({
   description: 'Test Letter from the Node.js Wrapper',
@@ -95,9 +95,7 @@ Seeuletter.letters.create({
 #### Promise
 
 ```javascript
-
 var Seeuletter = require('seeuletter')('YOUR API KEY');
-
 
 // promise pattern
 Seeuletter.letters.create({
