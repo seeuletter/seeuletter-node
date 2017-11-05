@@ -64,7 +64,7 @@ $ npm install
 
 ### Usage
 
-#### Callback
+#### Create a new letter - Callback style
 ```javascript
 var Seeuletter = require('seeuletter')('YOUR API KEY');
 
@@ -92,7 +92,7 @@ Seeuletter.letters.create({
 })
 ```
 
-#### Promise
+#### Create a new letter - Promise style
 
 ```javascript
 var Seeuletter = require('seeuletter')('YOUR API KEY');
@@ -116,6 +116,34 @@ Seeuletter.letters.create({
     nom : 'Seeuletter'
   }
 })
+.then(function (response) {
+  console.log('response : ', response);
+})
+.catch(function (err) {
+  console.log('err : ', err);
+});
+```
+
+#### List all Letters
+
+```javascript
+var Seeuletter = require('seeuletter')('test_12345678901234567890')
+
+Seeuletter.letters.list()
+.then(function (response) {
+  console.log('response : ', response);
+})
+.catch(function (err) {
+  console.log('err : ', err);
+});
+```
+
+#### Retrieve a specific Letter
+
+```javascript
+var Seeuletter = require('seeuletter')('test_12345678901234567890')
+
+Seeuletter.letters.retrieve('LETTER_ID')
 .then(function (response) {
   console.log('response : ', response);
 })
