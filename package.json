@@ -14,12 +14,12 @@
   "homepage": "https://github.com/seeuletter/seeuletter-node",
   "author": "Seeuletter <hello@seeuletter.com> (https://www.seeuletter.com/)",
   "dependencies": {
-    "bluebird": "^3.0.6",
+    "bluebird": "^3.5.1",
     "flat": "^4.0.0",
-    "request": "^2.81.0"
+    "request": "^2.85.0"
   },
   "devDependencies": {
-    "moment": "^2.19.3"
+    "moment": "^2.22.1"
   },
   "repository": {
     "type": "git",
