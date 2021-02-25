@@ -124,6 +124,36 @@ Seeuletter.letters.create({
 });
 ```
 
+#### Create a new electronic letter - Promise style
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// promise pattern
+Seeuletter.letters.createElectronic({
+  description: 'Test electronic letter from the Node.js Wrapper',
+  to: {
+    email: 'erlich.dumas@example.com',
+    first_name: 'Erlich',
+    last_name: 'Dumas',
+    status: 'individual'
+  },
+  postage_type: 'lre',
+  content: 'Please review the attached documents:',
+  source_file: '<html>Hello, {{nom}}</html>',
+  source_file_type: 'html',
+  variables: {
+    nom : 'Seeuletter'
+  }
+})
+.then(function (response) {
+  console.log('response : ', response);
+})
+.catch(function (err) {
+  console.log('err : ', err);
+});
+```
+
 #### Create a new postcard - Promise style
 
 ```javascript
