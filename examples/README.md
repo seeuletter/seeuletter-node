@@ -21,3 +21,9 @@ node create_letter.js
 ```
 node create_postcard.js
 ```
+
+
+### Create an electronic letter
+```
+node create_electronic_letter.js
+```
