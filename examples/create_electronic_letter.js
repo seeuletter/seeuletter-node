@@ -3,14 +3,12 @@
 /*
  * Send an electronic letter with a template ID and template merge variables.
  * Run this. It's working out of the box : node create_electronic_letter.js
+ * Use your MySendingBox Account API Key live or test
  */
-
-var fs = require('fs')
 
 var seeuletterFactory = require('../lib/index.js')
 var moment = require('moment')
-var Seeuletter = new seeuletterFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320r')
-
+var Seeuletter = new seeuletterFactory('API_KEY_HERE')
 
 // Create the address
 Seeuletter.letters.createElectronic({
@@ -24,10 +22,8 @@ Seeuletter.letters.createElectronic({
   postage_type: 'lre',
   content: 'Please review the attached documents:',
 
-  //source_file: fs.createReadStream('./too_large.pdf'),
-
   // https://www.seeuletter.com/templates
-  source_file: '2Iy8nycCh',
+  source_file: 'TEMPLATE_ID_HERE',
   source_file_type: 'template_id',
 
   variables: {
@@ -48,7 +44,7 @@ Seeuletter.letters.createElectronic({
   }
 })
   .then(function (letter) {
-    console.log('The Seeuletter API responded : ', letter)
+    console.log('The Seeuletter API Letter Electronic responded : ', letter)
   })
   .catch(function (err) {
     //console.log('err : ', err);

@@ -3,13 +3,12 @@
 /*
  * Send a letter with a template ID and template merge variables.
  * Run this. It's working out of the box : node create_letter.js
+ * Use your MySendingBox Account API Key live or test
  */
-
-var fs = require('fs')
 
 var seeuletterFactory = require('../lib/index.js')
 var moment = require('moment')
-var Seeuletter = new seeuletterFactory('test_726e0bec-90f7-4ae4-8910-e5d12920320r')
+var Seeuletter = new seeuletterFactory('API_KEY_HERE')
 
 
 // Create the address
@@ -26,10 +25,8 @@ Seeuletter.letters.create({
   postage_type: 'prioritaire',
   color: 'bw',
 
-  //source_file: fs.createReadStream('./too_large.pdf'),
-
   // https://www.seeuletter.com/templates
-  source_file: 'Sy7T70hHW',
+  source_file: 'TEMPLATE_ID_HERE',
   source_file_type: 'template_id',
 
   variables: {
@@ -50,7 +47,7 @@ Seeuletter.letters.create({
   }
 })
   .then(function (letter) {
-    console.log('The Seeuletter API responded : ', letter)
+    console.log('The Seeuletter API Letter responded : ', letter)
   })
   .catch(function (err) {
     //console.log('err : ', err);

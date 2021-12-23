@@ -15,9 +15,9 @@ See full Seeuletter.com documentation [here](https://docs.seeuletter.com/).
 For best results, be sure that you're using the latest version of the Seeuletter API and the latest version of the Node.js wrapper.
 
 #### French
-Un module NPM pour envoyer du courrier postal en ligne depuis votre application Node.Js.
+Un module NPM pour envoyer du courrier postal ou electronique en ligne depuis votre application Node.Js.
 
-Seeuletter propose une API permettant d'envoyer très facilement du courrier postal depuis votre ERP, CRM ou application web.
+Seeuletter propose une API permettant d'envoyer très facilement du courrier postal ou électronique depuis votre ERP, CRM ou application web.
 
 Pas de frais d'installation. Pas d'engagement. Vous payez ce que vous consommez.
 
@@ -30,13 +30,15 @@ Bien démarrer : https://www.seeuletter.com/guide/bien-demarrer-avec-l-api-d-env
 - [Getting Started](#getting-started)
   - [Registration](#registration)
   - [Installation](#installation)
-  - [Usage](#usage)
+  - [Letters](#letters)
+  - [Postcards](#postcards)
+  - [Accounts](#accounts)
+  - [Invoices](#invoices)
 - [Examples](#examples)
 
 ## Getting Started
 
 Here's a general overview of the Seeuletter services available, click through to read more.
-
 
 Please read through the official [API Documentation](https://docs.seeuletter.com/) to get a complete sense of what to expect from each endpoint.
 
@@ -62,7 +64,7 @@ $ git clone git@github.com:Seeuletter/seeuletter-node.git
 $ npm install
 ```
 
-### Usage
+### Letters
 
 #### Create a new letter - Callback style
 ```javascript
@@ -154,48 +156,6 @@ Seeuletter.letters.createElectronic({
 });
 ```
 
-#### Create a new postcard - Promise style
-
-```javascript
-var Seeuletter = require('seeuletter')('YOUR API KEY');
-
-// Create the address
-Seeuletter.postcards.create({
-  description: 'Test Postcard from the Node.js Wrapper',
-  to: {
-    name: 'Erlich',
-    address_line1: '30 rue de rivoli',
-    address_line2: '',
-    address_city: 'Paris',
-    address_country: 'France',
-    address_postalcode: '75004'
-  },
-  // https://www.seeuletter.com/templates
-  source_file_front: 'Hy2GUkiyz',
-  source_file_front_type: 'template_id',
-  source_file_back: 'rkfnt1s1z',
-  source_file_back_type: 'template_id',
-
-  variables: {
-    PRENOM: 'Erlich',
-    NOM: 'Bachman',
-    CODE_PROMO_BIENVENUE: 'CODE',
-    URL_COURTE_BIENVENUE: 'https://goo.gl/uqTHnD',
-    ADRESSE: '30 rue de Rivoli',
-    CODE_POSTAL : '75004',
-    VILLE : 'Paris',
-    PAYS : 'France'
-  }
-})
-  .then(function (letter) {
-    console.log('The Seeuletter API responded : ', letter)
-  })
-  .catch(function (err) {
-    console.log('Error message : ', err.message)
-  })
-
-```
-
 #### List all Letters
 
 ```javascript
@@ -223,6 +183,131 @@ Seeuletter.letters.retrieve('LETTER_ID')
   console.log('err : ', err);
 });
 ```
+
+### Postcards
+
+#### Create a new postcard - Promise style
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// Create the address
+Seeuletter.postcards.create({
+  description: 'Test Postcard from the Node.js Wrapper',
+  to: {
+    name: 'Erlich',
+    address_line1: '30 rue de rivoli',
+    address_line2: '',
+    address_city: 'Paris',
+    address_country: 'France',
+    address_postalcode: '75004'
+  },
+  // https://www.seeuletter.com/templates
+  source_file_front: 'YOUR TEMPLATE ID',
+  source_file_front_type: 'template_id',
+  source_file_back: 'YOUR TEMPLATE ID',
+  source_file_back_type: 'template_id',
+
+  variables: {
+    PRENOM: 'Erlich',
+    NOM: 'Bachman',
+    CODE_PROMO_BIENVENUE: 'CODE',
+    URL_COURTE_BIENVENUE: 'https://goo.gl/uqTHnD',
+    ADRESSE: '30 rue de Rivoli',
+    CODE_POSTAL : '75004',
+    VILLE : 'Paris',
+    PAYS : 'France'
+  }
+})
+  .then(function (letter) {
+    console.log('The Seeuletter API Postcard responded : ', letter)
+  })
+  .catch(function (err) {
+    console.log('Error message : ', err.message)
+  })
+
+```
+
+### Accounts
+
+#### Create a new account for the company
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// Create the account
+Seeuletter.accounts.create({
+  email: "msb.partner@example.com",
+  name: "Erlich Bachman",
+  phone: "+33104050607",
+  company_name: "MSB Partner",
+  address_line1: '30 rue de rivoli',
+  address_line2: '',
+  address_city: 'Paris',
+  address_country: 'France',
+  address_postalcode: '75004'
+})
+  .then(function (account) {
+    console.log('The Seeuletter API Account responded : ', account)
+  })
+  .catch(function (err) {
+    console.log('Error message : ', err.message)
+  })
+
+```
+
+#### Update the account company email
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// Update the account
+Seeuletter.accounts.updateEmail("ACCOUNT COMPANY ID", "UPDATED EMAIL")
+  .then(function () {
+    console.log('The Seeuletter API Account responded with success')
+  })
+  .catch(function (err) {
+    console.log('Error message : ', err.message)
+  })
+
+```
+
+### Invoices
+
+#### List all invoices for a company
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// Getting the invoice list
+Seeuletter.invoices.list({
+  // Pass optional filter here as object
+})
+  .then(function (response) {
+    console.log('The Seeuletter API Invoices responded : ', response)
+  })
+  .catch(function (err) {
+    console.log('Error message : ', err.message)
+  })
+
+```
+
+#### Retrieve a specific invoice
+
+```javascript
+var Seeuletter = require('seeuletter')('YOUR API KEY');
+
+// Getting the invoice list
+Seeuletter.invoices.retrieve("INVOICE ID")
+  .then(function (invoice) {
+    console.log('The Seeuletter API Invoice responded : ', invoice)
+  })
+  .catch(function (err) {
+    console.log('Error message : ', err.message)
+  })
+
+```
+
 
 ## Examples
 
