@@ -10,7 +10,7 @@
     "Seeuletter.com",
     "printing"
   ],
-  "version": "1.5.0",
+  "version": "1.5.1",
   "homepage": "https://github.com/seeuletter/seeuletter-node",
   "author": "Seeuletter <hello@seeuletter.com> (https://www.seeuletter.com/)",
   "dependencies": {
