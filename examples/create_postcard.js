@@ -3,12 +3,11 @@
 /*
  * Send a postcard with a template ID and template merge variables.
  * Run this. It's working out of the box : node create_postcard.js
+ * Use your MySendingBox Account API Key live or test
  */
 
-var fs = require('fs')
-
 var seeuletterFactory = require('../lib/index.js')
-var Seeuletter = new seeuletterFactory('test_726e0bec-90f7-4ae4-8910-e5d19870320c')
+var Seeuletter = new seeuletterFactory('API_KEY_HERE')
 
 // Create the address
 Seeuletter.postcards.create({
@@ -22,10 +21,10 @@ Seeuletter.postcards.create({
     address_postalcode: '75004'
   },
   // https://www.seeuletter.com/templates
-  source_file_front: 'Hy2GUkiyz',
+  source_file_front: 'TEMPLATE_ID_HERE',
   source_file_front_type: 'template_id',
 
-  source_file_back: 'rkfnt1s1z',
+  source_file_back: 'TEMPLATE_ID_HERE',
   source_file_back_type: 'template_id',
 
   variables: {
@@ -41,7 +40,7 @@ Seeuletter.postcards.create({
   }
 })
   .then(function (letter) {
-    console.log('The Seeuletter API responded : ', letter)
+    console.log('The Seeuletter API Postcard responded : ', letter)
   })
   .catch(function (err) {
     //console.log('err : ', err);
